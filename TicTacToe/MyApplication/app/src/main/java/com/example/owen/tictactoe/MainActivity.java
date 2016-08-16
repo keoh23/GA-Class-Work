@@ -54,54 +54,61 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toasty(String message) {
-        Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 
     private void winnerWinner() {
         boolean chickenDinner = false;
+        boolean chickenDinner2 = false;
 
-        if (space1.equals("O"))
-            if (space1.equals("O") && space2.equals("O") && space3.equals("O"))
-            chickenDinner = true;
-            if (space1.equals("O") && space5.equals("O") && space9.equals("O"))
-            chickenDinner = true;
-            if (space1.equals("O") && space4.equals("O") && space7.equals("O"))
-            chickenDinner = true;
 
-        if (space2.equals("O"))
-            if (space2.equals("O") && space5.equals("O") && space8.equals("O"))
+        if (space1.getText().toString().equals("O")) {
+            if (space1.getText().toString().equals("O") && space2.getText().toString().equals("O") && space3.getText().toString().equals("O"))
                 chickenDinner = true;
-
-        if (space3.equals("O"))
-            if (space3.equals("O") && space5.equals("O") && space7.equals("O"))
+            if (space1.getText().toString().equals("O") && space5.getText().toString().equals("O") && space9.getText().toString().equals("O"))
                 chickenDinner = true;
-            if (space3.equals("O") && space6.equals("O") && space9.equals("O"))
+            if (space1.getText().toString().equals("O") && space4.getText().toString().equals("O") && space7.getText().toString().equals("O"))
                 chickenDinner = true;
-
-        else if (space1.equals("X"))
-            if (space1.equals("X") && space2.equals("X") && space3.equals("X"))
-                chickenDinner = false;
-            if (space1.equals("X") && space5.equals("X") && space9.equals("X"))
-                chickenDinner = false ;
-            if (space1.equals("X") && space4.equals("X") && space7.equals("X"))
-                chickenDinner = false;
-
-        else if (space2.equals("X"))
-            if (space2.equals("X") && space5.equals("X") && space8.equals("X"))
-                chickenDinner = false;
-
-        else if (space3.equals("X"))
-            if (space3.equals("X") && space5.equals("X") && space7.equals("X"))
-                chickenDinner = false;
-            if (space3.equals("X") && space6.equals("X") && space9.equals("X"))
-                chickenDinner = false;
-
-        if (chickenDinner = true) {
-                toasty("Player 0 Wins!");
-            } else {
-                toasty("Player X Wins!");
-            }
-
         }
+
+        if (space2.getText().toString().equals("O")) {
+            if (space2.getText().toString().equals("O") && space5.getText().toString().equals("O") && space8.getText().toString().equals("O"))
+                chickenDinner = true;
+        }
+
+        if (space3.getText().toString().equals("O")) {
+            if (space3.getText().toString().equals("O") && space5.getText().toString().equals("O") && space7.getText().toString().equals("O"))
+                chickenDinner = true;
+            if (space3.getText().toString().equals("O") && space6.getText().toString().equals("O") && space9.getText().toString().equals("O"))
+                chickenDinner = true;
+        }
+
+        else if (space1.getText().toString().equals("X")) {
+            if (space1.getText().toString().equals("X") && space2.getText().toString().equals("X") && space3.getText().toString().equals("X"))
+                chickenDinner2 = true;
+            if (space1.getText().toString().equals("X") && space5.getText().toString().equals("X") && space9.getText().toString().equals("X"))
+                chickenDinner2 = true;
+            if (space1.getText().toString().equals("X") && space4.getText().toString().equals("X") && space7.getText().toString().equals("X"))
+                chickenDinner2 = true;
+        }
+
+        else if (space2.getText().toString().equals("X")) {
+            if (space2.getText().toString().equals("X") && space5.getText().toString().equals("X") && space8.getText().toString().equals("X"))
+                chickenDinner2 = true;
+        }
+
+        else if (space3.getText().toString().equals("X")) {
+            if (space3.getText().toString().equals("X") && space5.getText().toString().equals("X") && space7.getText().toString().equals("X"))
+                chickenDinner2 = true;
+            if (space3.getText().toString().equals("X") && space6.getText().toString().equals("X") && space9.getText().toString().equals("X"))
+                chickenDinner2 = true;
+        }
+
+        if (chickenDinner ) {               //== true)
+            toasty("O is Winner!");
+        } else if (chickenDinner2) {
+            toasty("X is Winner!");
+        }
+    }
 
 }
