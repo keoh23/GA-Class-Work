@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class    MainActivity extends AppCompatActivity {
     TextView space1, space2, space3, space4, space5, space6, space7, space8, space9;
     TextView[] sArray;
     Button reset1;
@@ -45,25 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-//            reset1.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View b) {
-//                    Button reset = (Button) b;
-//                    count = 0;
-//                    space1.setText("");
-//                    space2.setText("");
-//                    space3.setText("");
-//                    space4.setText("");
-//                    space5.setText("");
-//                    space6.setText("");
-//                    space7.setText("");
-//                    space8.setText("");
-//                    space9.setText("");
-//                    move.setClickable(true);
-//
-//                }
-//            });
-        }
+    }
 
 
     public void moveMade(final TextView move) {
@@ -137,20 +119,47 @@ public class MainActivity extends AppCompatActivity {
                 chickenDinner = true;
             if (space3.getText().toString().equals("O") && space6.getText().toString().equals("O") && space9.getText().toString().equals("O"))
                 chickenDinner = true;
-        } else if (space1.getText().toString().equals("X")) {
+        }
+
+        if (space4.getText().toString().equals("O")) {
+            if (space4.getText().toString().equals("O") && space5.getText().toString().equals("O") && space6.getText().toString().equals("O"))
+                chickenDinner = true;
+        }
+
+        if (space7.getText().toString().equals("O")) {
+            if (space7.getText().toString().equals("O") && space8.getText().toString().equals("O") && space9.getText().toString().equals("O"))
+                chickenDinner = true;
+
+        }
+
+        else if (space1.getText().toString().equals("X")) {
             if (space1.getText().toString().equals("X") && space2.getText().toString().equals("X") && space3.getText().toString().equals("X"))
                 chickenDinner2 = true;
             if (space1.getText().toString().equals("X") && space5.getText().toString().equals("X") && space9.getText().toString().equals("X"))
                 chickenDinner2 = true;
             if (space1.getText().toString().equals("X") && space4.getText().toString().equals("X") && space7.getText().toString().equals("X"))
                 chickenDinner2 = true;
-        } else if (space2.getText().toString().equals("X")) {
+        }
+
+        else if (space2.getText().toString().equals("X")) {
             if (space2.getText().toString().equals("X") && space5.getText().toString().equals("X") && space8.getText().toString().equals("X"))
                 chickenDinner2 = true;
-        } else if (space3.getText().toString().equals("X")) {
+        }
+
+        else if (space3.getText().toString().equals("X")) {
             if (space3.getText().toString().equals("X") && space5.getText().toString().equals("X") && space7.getText().toString().equals("X"))
                 chickenDinner2 = true;
             if (space3.getText().toString().equals("X") && space6.getText().toString().equals("X") && space9.getText().toString().equals("X"))
+                chickenDinner2 = true;
+        }
+
+        else if (space4.getText().toString().equals("X")) {
+            if (space4.getText().toString().equals("X") && space5.getText().toString().equals("X") && space6.getText().toString().equals("X"))
+                chickenDinner2 = true;
+        }
+
+        else if (space7.getText().toString().equals("X")) {
+            if (space7.getText().toString().equals("X") && space8.getText().toString().equals("X") && space9.getText().toString().equals("X"))
                 chickenDinner2 = true;
         }
 
