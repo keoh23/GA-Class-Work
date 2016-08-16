@@ -4,12 +4,14 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView space1, space2, space3, space4, space5, space6, space7, space8, space9;
     TextView[] sArray;
+    Button reset1;
     boolean ttTurn = true;
     static int count = 0;
 
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         space7 = (TextView) findViewById(R.id.space7);
         space8 = (TextView) findViewById(R.id.space8);
         space9 = (TextView) findViewById(R.id.space9);
+        reset1 = (Button) findViewById(R.id.button1);
 
         sArray = new TextView[]{space1, space2, space3, space4, space5, space6, space7, space8, space9};
         for (TextView move : sArray) {
@@ -36,12 +39,34 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     TextView move = (TextView) v;
                     moveMade(move);
+
                 }
             });
-        }
-    }
 
-    public void moveMade(TextView move) {
+        }
+
+//            reset1.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View b) {
+//                    Button reset = (Button) b;
+//                    count = 0;
+//                    space1.setText("");
+//                    space2.setText("");
+//                    space3.setText("");
+//                    space4.setText("");
+//                    space5.setText("");
+//                    space6.setText("");
+//                    space7.setText("");
+//                    space8.setText("");
+//                    space9.setText("");
+//                    move.setClickable(true);
+//
+//                }
+//            });
+        }
+
+
+    public void moveMade(final TextView move) {
         if (ttTurn) {
             move.setText("O");
         } else {
@@ -53,6 +78,35 @@ public class MainActivity extends AppCompatActivity {
         ttTurn = !ttTurn;
         winnerWinner();
         countClick();
+
+        reset1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View b) {
+                Button reset = (Button) b;
+                count = 0;
+                space1.setText("");
+                space2.setText("");
+                space3.setText("");
+                space4.setText("");
+                space5.setText("");
+                space6.setText("");
+                space7.setText("");
+                space8.setText("");
+                space9.setText("");
+                space1.setClickable(true);
+                space2.setClickable(true);
+                space3.setClickable(true);
+                space4.setClickable(true);
+                space5.setClickable(true);
+                space6.setClickable(true);
+                space7.setClickable(true);
+                space8.setClickable(true);
+                space9.setClickable(true);
+                ttTurn = !ttTurn;
+
+            }
+        });
+
     }
 
     public void toasty(String message) {
@@ -113,7 +167,5 @@ public class MainActivity extends AppCompatActivity {
             toasty("DRAW");
         }
     }
-
-//    public void resetButt
 
 }
